@@ -7,28 +7,88 @@
 //                             "file:${userHome}/.grails/${appName}-config.properties",
 //                             "file:${userHome}/.grails/${appName}-config.groovy"]
 
+grails.config.locations = [  "file:${System.properties['user.dir']}/${appName}-config.properties",
+                             "file:${System.properties['catalina.base']}/conf/Catalina/localhost/${appName}-config.properties"]
+
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+
+println """*****CONFIG PROPERTIES:\n\
+\tappName:""" + appName + """\n\
+\tuserHome:""" + userHome + """\n\
+\tbin.dir:""" + System.properties['user.dir'] + """\n\
+\tcatalina.base:""" + System.properties['catalina.base'] + """\n\
+\tbase.dir:""" + System.properties['base.dir'] + """\n\
+"""
+
+//System.properties.each {
+//    key, value ->
+//    println "${key}=${value}"
+//}
+
+///////////////////////////////////////////////////////////////////////
+// Elastic Beanstalk
+///////////////////////////////////////////////////////////////////////
+if(System.properties['AWS_ACCESS_KEY_ID']) {
+  grails.plugin.awsinstance?.accessKey = System.properties['AWS_ACCESS_KEY_ID']
+}
+if(System.properties['AWS_SECRET_KEY']) {
+  grails.plugin.awsinstance?.secretKey = System.properties['AWS_SECRET_KEY']
+}
+if(System.properties['JDBC_CONNECTION_STRING']) {
+  def props_str = System.properties['JDBC_CONNECTION_STRING']
+  if(props_str) {
+    def properties = props_str.split(',')
+    for(prop in properties) {
+      def key_val =  prop.split('=')
+      dataSource.put(key_val[0].trim(), key_val[1].trim())
+    }
+  }
+}
+// Environment parameters can only be 200 chars (length),
+// so watch how many config items are passed in per property
+def host_name
+if(System.properties['PARAM1']) {
+  def props_str = System.properties['PARAM1']
+  if(props_str) {
+    def properties = props_str.split(',')
+    for(prop in properties) {
+      def key_val =  prop.split('=')
+      def key = key_val[0].trim()
+      def val = key_val[1].trim()
+      switch(key) {
+      case 'region': grails.plugin.awsinstance?.defaultRegion = val
+        break
+      case 'host_name': host_name = val
+        break
+      case 's3bucket': grails.plugin.awsinstance?.s3.bucketName = val
+        break
+      case 'mailFrom': grails.plugin.awsinstance?.ses.mailFrom = val
+        break
+      }
+    }
+  }
+}
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
 grails.mime.disable.accept.header.userAgents = ['Gecko', 'WebKit', 'Presto', 'Trident']
 grails.mime.types = [ // the first one is the default format
-    all:           '*/*', // 'all' maps to '*' or the first available format in withFormat
-    atom:          'application/atom+xml',
-    css:           'text/css',
-    csv:           'text/csv',
-    form:          'application/x-www-form-urlencoded',
-    html:          ['text/html','application/xhtml+xml'],
-    js:            'text/javascript',
-    json:          ['application/json', 'text/json'],
-    multipartForm: 'multipart/form-data',
-    rss:           'application/rss+xml',
-    text:          'text/plain',
-    hal:           ['application/hal+json','application/hal+xml'],
-    xml:           ['text/xml', 'application/xml']
+  all:           '*/*', // 'all' maps to '*' or the first available format in withFormat
+  atom:          'application/atom+xml',
+  css:           'text/css',
+  csv:           'text/csv',
+  form:          'application/x-www-form-urlencoded',
+  html:          ['text/html','application/xhtml+xml'],
+  js:            'text/javascript',
+  json:          ['application/json', 'text/json'],
+  multipartForm: 'multipart/form-data',
+  rss:           'application/rss+xml',
+  text:          'text/plain',
+  hal:           ['application/hal+json','application/hal+xml'],
+  xml:           ['text/xml', 'application/xml']
 ]
 
 // URL Mapping Cache Max Size, defaults to 5000
@@ -43,20 +103,20 @@ grails.controllers.defaultScope = 'singleton'
 
 // GSP settings
 grails {
-    views {
-        gsp {
-            encoding = 'UTF-8'
-            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
-            codecs {
-                expression = 'html' // escapes values inside ${}
-                scriptlet = 'html' // escapes output from scriptlets in GSPs
-                taglib = 'none' // escapes output from taglibs
-                staticparts = 'none' // escapes output from static template parts
-            }
-        }
-        // escapes all not-encoded output at final stage of outputting
-        // filteringCodecForContentType.'text/html' = 'html'
+  views {
+    gsp {
+      encoding = 'UTF-8'
+      htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
+      codecs {
+        expression = 'html' // escapes values inside ${}
+        scriptlet = 'html' // escapes output from scriptlets in GSPs
+        taglib = 'none' // escapes output from taglibs
+        staticparts = 'none' // escapes output from static template parts
+      }
     }
+    // escapes all not-encoded output at final stage of outputting
+    // filteringCodecForContentType.'text/html' = 'html'
+  }
 }
 
 
@@ -86,24 +146,24 @@ grails.hibernate.pass.readonly = false
 grails.hibernate.osiv.readonly = false
 
 environments {
-    development {
-        grails.logging.jul.usebridge = true
-    }
-    production {
-        grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
-    }
+  development {
+    grails.logging.jul.usebridge = true
+  }
+  production {
+    grails.logging.jul.usebridge = false
+    // TODO: grails.serverURL = "http://www.changeme.com"
+  }
 }
 
 // log4j configuration
 log4j.main = {
-    // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+  // Example of changing the log pattern for the default console appender:
+  //
+  //appenders {
+  //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+  //}
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+  error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
