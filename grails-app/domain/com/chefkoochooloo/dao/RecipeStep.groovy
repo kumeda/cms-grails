@@ -8,7 +8,7 @@ class RecipeStep {
   Integer id
   Integer ent
   Integer opt
-  Integer order
+  Integer recipe_order
   Integer type
   String label
 
