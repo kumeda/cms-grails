@@ -14,7 +14,9 @@ Development Setup:
   * Remember your admin (root) login/password
   * Enter the mysql console: mysql -u root -p
   * Create a chefk database: create database chefk
-4. git clone this repository
+4. See git flow diagram
+  * git fork this repository to create your "developer branch"
+  * git clone your "developer branch" to create a "local repo" and "working directory"
 5. Update your config (chefk-config.properties) file
   * dataSource.url=jdbc\:mysql\://localhost/chefk
   * dataSource.username=root
@@ -23,3 +25,7 @@ Development Setup:
   * grails clean
   * grails compile
   * grails run-app -https
+
+Git Flow:
+--------------
+![Git Flow Diagram](/grails-app/assets/images/git_flow.png?raw=true "Git Flow Diagram")
