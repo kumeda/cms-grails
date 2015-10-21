@@ -21,5 +21,6 @@ class RecipeStep {
 
   static constraints = {
     recipe_order unique: true
+    type min: 0, max: 1
   }
 }
