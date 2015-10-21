@@ -8,8 +8,6 @@ class RecipeIngredient {
   static belongsTo = Recipe
 
   Integer id
-  Integer ent
-  Integer opt
   Ingredient ingredient
   Unit unit
   Float amount
@@ -22,7 +20,6 @@ class RecipeIngredient {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    amount blank: false
   }
 }

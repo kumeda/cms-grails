@@ -6,8 +6,6 @@ import groovy.transform.ToString
 class Unit {
 
   Integer id
-  Integer ent
-  Integer opt
   String name
 
   static mapping = {
@@ -17,8 +15,7 @@ class Unit {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }
 

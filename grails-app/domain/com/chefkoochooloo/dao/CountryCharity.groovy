@@ -8,8 +8,6 @@ class CountryCharity {
   static belongsTo = Country
 
   Integer id
-  Integer ent
-  Integer opt
   String donate
   String url
   Country country
@@ -21,8 +19,6 @@ class CountryCharity {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
     url size: 1..400, blank: false
     donate size: 1..1000, blank: false
   }

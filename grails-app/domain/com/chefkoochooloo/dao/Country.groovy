@@ -8,8 +8,6 @@ class Country {
   static hasMany = [languages: Language, charities: CountryCharity, facts: CountryFact, recipes: Recipe]
 
   Integer id
-  Integer ent
-  Integer opt
   Integer population
   String capital
   String code
@@ -25,7 +23,6 @@ class Country {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }

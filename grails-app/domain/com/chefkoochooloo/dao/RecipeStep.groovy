@@ -8,8 +8,6 @@ class RecipeStep {
   static belongsTo = Recipe
 
   Integer id
-  Integer ent
-  Integer opt
   Integer recipe_order
   Integer type
   String label
@@ -22,7 +20,6 @@ class RecipeStep {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    recipe_order unique: true
   }
 }

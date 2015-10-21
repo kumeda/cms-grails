@@ -8,8 +8,6 @@ class Ingredient {
   static hasMany = [recipes: RecipeIngredient]
 
   Integer id
-  Integer ent
-  Integer opt
   Integer user
   String name
   String spotlight
@@ -21,8 +19,6 @@ class Ingredient {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
     name size: 1..200, blank:false
     spotlight size: 1..500, blank:false
   }

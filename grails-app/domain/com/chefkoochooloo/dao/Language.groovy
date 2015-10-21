@@ -6,8 +6,6 @@ import groovy.transform.ToString
 class Language {
 
   Integer id
-  Integer ent
-  Integer opt
   Integer music
   String code
   String name
@@ -20,7 +18,6 @@ class Language {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }

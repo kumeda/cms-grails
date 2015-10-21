@@ -8,8 +8,6 @@ class Recipe {
   static hasMany = [tools: Tool, flags: Flag, ingredients: RecipeIngredient, images: RecipeImage, types: Type, steps: RecipeStep, countries: Country]
 
   Integer id
-  Integer ent
-  Integer opt
   String name
   String presentation
   String time
@@ -21,7 +19,6 @@ class Recipe {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }

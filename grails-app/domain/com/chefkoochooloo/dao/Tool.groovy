@@ -6,8 +6,6 @@ import groovy.transform.ToString
 class Tool {
 
   Integer id
-  Integer ent
-  Integer opt
   String name
   String url
 
@@ -18,7 +16,6 @@ class Tool {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }

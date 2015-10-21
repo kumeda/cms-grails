@@ -8,8 +8,6 @@ class RecipeImage {
   static belongsTo = Recipe
 
   Integer id
-  Integer ent
-  Integer opt
   Integer presentation
   String alt
   String url
@@ -22,7 +20,6 @@ class RecipeImage {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    url blank: false
   }
 }

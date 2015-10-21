@@ -8,8 +8,6 @@ class CountryFact {
   static belongsTo = Country
 
   Integer id
-  Integer ent
-  Integer opt
   Country country
   String fact
 
@@ -20,7 +18,6 @@ class CountryFact {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    fact blank: false
   }
 }

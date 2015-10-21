@@ -6,8 +6,6 @@ import groovy.transform.ToString
 class Flag {
 
   Integer id
-  Integer ent
-  Integer opt
   String name
 
   static mapping = {
@@ -17,7 +15,6 @@ class Flag {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }

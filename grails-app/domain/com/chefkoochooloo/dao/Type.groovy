@@ -6,8 +6,6 @@ import groovy.transform.ToString
 class Type {
 
   Integer id
-  Integer ent
-  Integer opt
   String name
   String presentation
   String time
@@ -19,7 +17,6 @@ class Type {
   }
 
   static constraints = {
-    ent blank: true
-    opt blank: true
+    name blank: false
   }
 }
