@@ -23,7 +23,8 @@ class CountryCharity {
   static constraints = {
     ent blank: true
     opt blank: true
-    donate size: 1..400, blank: false
+    url size: 1..400, blank: false
+    donate size: 1..1000, blank: false
   }
 }
 
