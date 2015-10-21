@@ -4,15 +4,16 @@ import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
 class CountryCharity {
-  
-  static belongsTo = [country: Country]
+
+  static belongsTo = Country
 
   Integer id
   Integer ent
   Integer opt
   String donate
   String url
- 
+  Country country
+
   static mapping = {
     table '`country_charity`'
     cache true
@@ -26,4 +27,3 @@ class CountryCharity {
     donate size: 1..1000, blank: false
   }
 }
-

@@ -5,8 +5,8 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Ingredient {
 
-  static hasmany = [recipes: RecipeIngredient]
-  
+  static hasMany = [recipes: RecipeIngredient]
+
   Integer id
   Integer ent
   Integer opt

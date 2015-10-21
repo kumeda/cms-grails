@@ -4,13 +4,11 @@ import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Flag {
-    
-  static hasmany = [recipes: Recipe]
-    
+
   Integer id
   Integer ent
   Integer opt
-  String name 
+  String name
 
   static mapping = {
     table '`flag`'
@@ -23,14 +21,3 @@ class Flag {
     opt blank: true
   }
 }
-
-/*
-CREATE TABLE ZFLAG ( 
-Z_PK INTEGER PRIMARY KEY, 
-Z_ENT INTEGER, 
-Z_OPT INTEGER, 
-ZNAME VARCHAR );
-
-
-CREATE TABLE ZFLAG ( Z_PK INTEGER PRIMARY KEY, Z_ENT INTEGER, Z_OPT INTEGER, ZNAME VARCHAR );
-*/

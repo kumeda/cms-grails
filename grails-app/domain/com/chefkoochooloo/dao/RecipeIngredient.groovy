@@ -5,7 +5,7 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class RecipeIngredient {
 
-  static belongsTo = [recipe: Recipe]
+  static belongsTo = Recipe
 
   Integer id
   Integer ent
@@ -13,6 +13,7 @@ class RecipeIngredient {
   Ingredient ingredient
   Unit unit
   Float amount
+  Recipe recipe
 
   static mapping = {
     table '`recipe_ingredient`'

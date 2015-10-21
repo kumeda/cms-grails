@@ -5,12 +5,12 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class CountryFact {
 
-  static belongsTo = [country: Country]
+  static belongsTo = Country
 
   Integer id
   Integer ent
   Integer opt
-
+  Country country
   String fact
 
   static mapping = {
@@ -24,4 +24,3 @@ class CountryFact {
     opt blank: true
   }
 }
-

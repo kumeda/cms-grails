@@ -9,7 +9,6 @@ class Unit {
   Integer ent
   Integer opt
   String name
-  
 
   static mapping = {
     table '`unit`'

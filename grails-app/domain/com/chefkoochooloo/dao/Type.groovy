@@ -3,17 +3,17 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class RecipeType {
+class Type {
 
   Integer id
   Integer ent
   Integer opt
-  String name 
+  String name
   String presentation
   String time
 
   static mapping = {
-    table '`recipe_type`'
+    table '`type`'
     cache true
     version false
   }

@@ -4,13 +4,13 @@ import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Recipe {
-    
-  static hasMany = [tools: Tool, flags: Flag, ingredients: RecipeIngredient]
+  static belongsTo = Country
+  static hasMany = [tools: Tool, flags: Flag, ingredients: RecipeIngredient, images: RecipeImage, types: Type, steps: RecipeStep, countries: Country]
 
   Integer id
   Integer ent
   Integer opt
-  String name 
+  String name
   String presentation
   String time
 
@@ -25,22 +25,3 @@ class Recipe {
     opt blank: true
   }
 }
-
-
-/*
-CREATE TABLE ZRECIPE ( 
-Z_PK INTEGER PRIMARY KEY, 
-Z_ENT INTEGER, 
-Z_OPT INTEGER, 
-ZCOUNTRY INTEGER, 
-ZTYPE INTEGER, 
-ZUSER INTEGER, 
-ZNAME VARCHAR, 
-ZPRESENTATION VARCHAR, 
-ZTIME VARCHAR );
-
-CREATE TABLE ZRECIPE ( Z_PK INTEGER PRIMARY KEY, Z_ENT INTEGER, Z_OPT INTEGER, ZCOUNTRY INTEGER, ZTYPE INTEGER, ZUSER INTEGER, ZNAME VARCHAR, ZPRESENTATION VARCHAR, ZTIME VARCHAR );
-CREATE INDEX ZRECIPE_ZCOUNTRY_INDEX ON ZRECIPE (ZCOUNTRY);
-CREATE INDEX ZRECIPE_ZTYPE_INDEX ON ZRECIPE (ZTYPE);
-CREATE INDEX ZRECIPE_ZUSER_INDEX ON ZRECIPE (ZUSER);
- */

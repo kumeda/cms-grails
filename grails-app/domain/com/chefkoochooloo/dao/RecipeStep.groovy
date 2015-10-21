@@ -5,12 +5,15 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class RecipeStep {
 
+  static belongsTo = Recipe
+
   Integer id
   Integer ent
   Integer opt
   Integer recipe_order
   Integer type
   String label
+  Recipe recipe
 
   static mapping = {
     table '`recipe_step`'
@@ -23,17 +26,3 @@ class RecipeStep {
     opt blank: true
   }
 }
-
-/*
-CREATE TABLE ZRECIPESTEP ( 
-Z_PK INTEGER PRIMARY KEY, 
-Z_ENT INTEGER, 
-Z_OPT INTEGER, 
-ZORDER INTEGER, 
-ZTYPE INTEGER, 
-ZRECIPE INTEGER, 
-ZLABEL VARCHAR );
-
-CREATE TABLE ZRECIPESTEP ( Z_PK INTEGER PRIMARY KEY, Z_ENT INTEGER, Z_OPT INTEGER, ZORDER INTEGER, ZTYPE INTEGER, ZRECIPE INTEGER, ZLABEL VARCHAR );
-CREATE INDEX ZRECIPESTEP_ZRECIPE_INDEX ON ZRECIPESTEP (ZRECIPE);
-*/
