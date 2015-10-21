@@ -5,13 +5,13 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class CountryFact {
 
+  static belongsTo = [country: Country]
+
   Integer id
   Integer ent
   Integer opt
-  Integer country
-  String fact
-  Integer country_id
 
+  String fact
 
   static mapping = {
     table '`country_fact`'

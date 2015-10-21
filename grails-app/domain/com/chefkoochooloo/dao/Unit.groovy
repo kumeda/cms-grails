@@ -3,19 +3,16 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class Ingredient {
+class Unit {
 
-  static hasmany = [recipes: RecipeIngredient]
-  
   Integer id
   Integer ent
   Integer opt
-  Integer user
   String name
-  String spotlight
+  
 
   static mapping = {
-    table '`ingredient`'
+    table '`unit`'
     cache true
     version false
   }
@@ -23,7 +20,6 @@ class Ingredient {
   static constraints = {
     ent blank: true
     opt blank: true
-    name size: 1..200, blank:false
-    spotlight size: 1..500, blank:false
   }
 }
+

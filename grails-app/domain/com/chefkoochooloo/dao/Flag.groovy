@@ -6,7 +6,6 @@ import groovy.transform.ToString
 class Flag {
     
   static hasmany = [recipes: Recipe]
-  static belongsTo = Recipe
     
   Integer id
   Integer ent

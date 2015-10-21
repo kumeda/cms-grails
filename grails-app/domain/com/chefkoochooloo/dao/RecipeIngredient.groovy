@@ -3,16 +3,19 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class Units {
+class RecipeIngredient {
+
+  static belongsTo = [recipe: Recipe]
 
   Integer id
   Integer ent
   Integer opt
-  String name
-  
+  Ingredient ingredient
+  Unit unit
+  Float amount
 
   static mapping = {
-    table '`units`'
+    table '`recipe_ingredient`'
     cache true
     version false
   }
@@ -22,4 +25,3 @@ class Units {
     opt blank: true
   }
 }
-

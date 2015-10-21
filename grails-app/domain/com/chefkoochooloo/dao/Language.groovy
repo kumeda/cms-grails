@@ -5,6 +5,8 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Language {
 
+  static hasmany = [countries: Country]
+   
   Integer id
   Integer ent
   Integer opt

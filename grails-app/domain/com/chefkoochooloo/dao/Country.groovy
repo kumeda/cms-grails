@@ -5,6 +5,8 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Country {
 
+  static hasmany = [languages: Language, charities: CountryCharity, facts: CountryFact]
+  
   Integer id
   Integer ent
   Integer opt
@@ -16,7 +18,7 @@ class Country {
   String languages
   String name
   String wish
-
+  
   static mapping = {
     table '`country`'
     cache true
