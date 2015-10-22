@@ -25,6 +25,11 @@ Development Setup:
   * grails clean
   * grails compile
   * grails run-app -https
+7. upload sample data, located in scripts\sql\data
+  * mysql -u root -p -DchefK < tag.sql
+  * mysql -u root -p -DchefK < tool.sql
+  * mysql -u root -p -DchefK < type.sql
+  * mysql -u root -p -DchefK < unit.sql
 
 Git Flow:
 --------------
