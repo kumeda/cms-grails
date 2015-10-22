@@ -3,18 +3,22 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class Unit {
+class LikeIngredient {
+
+  static belongsTo = User
 
   Integer id
-  String name
+  User    user
+  Ingredient ingredient
+  Integer level // 0 to 5
 
   static mapping = {
-    table '`unit`'
+    table '`like_ingredient`'
     cache true
     version false
   }
 
   static constraints = {
-    name blank: false
+    level blank: false
   }
 }

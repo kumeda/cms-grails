@@ -1,4 +1,6 @@
-DELETE FROM `unit`;
+SET foreign_key_checks = 0;
+
+DELETE FROM `unit`;  # delete all data from table before insert
 
 INSERT INTO `unit` VALUES(1,'-');
 INSERT INTO `unit` VALUES(2,'lbs');
@@ -17,3 +19,5 @@ INSERT INTO `unit` VALUES(14,'dkg');
 INSERT INTO `unit` VALUES(15,'g');
 INSERT INTO `unit` VALUES(16,'ml');
 INSERT INTO `unit` VALUES(17,'dcl');
+
+SET foreign_key_checks = 1;

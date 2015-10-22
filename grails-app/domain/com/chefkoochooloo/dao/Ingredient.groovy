@@ -5,10 +5,9 @@ import groovy.transform.ToString
 @ToString(includePackage=false, includeNames=true, excludes="")
 class Ingredient {
 
-  static hasMany = [recipes: RecipeIngredient]
+  static hasMany = [recipes: RecipeIngredient, likes: LikeIngredient]
 
   Integer id
-  Integer user
   String name
   String spotlight
 

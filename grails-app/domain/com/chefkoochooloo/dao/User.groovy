@@ -3,13 +3,13 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class Unit {
+class User {
 
   Integer id
   String name
 
   static mapping = {
-    table '`unit`'
+    table '`user`'
     cache true
     version false
   }

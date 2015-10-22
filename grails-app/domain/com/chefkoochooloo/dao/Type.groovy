@@ -7,8 +7,6 @@ class Type {
 
   Integer id
   String name
-  String presentation
-  String time
 
   static mapping = {
     table '`type`'
