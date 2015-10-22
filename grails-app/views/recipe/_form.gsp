@@ -20,15 +20,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'flags', 'error')} ">
-	<label for="flags">
-		<g:message code="recipe.flags.label" default="Flags" />
-		
-	</label>
-	<g:select name="flags" from="${com.chefkoochooloo.dao.Flag.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.flags*.id}" class="many-to-many"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'images', 'error')} ">
 	<label for="images">
 		<g:message code="recipe.images.label" default="Images" />
@@ -107,6 +98,15 @@
 </li>
 </ul>
 
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'tags', 'error')} ">
+	<label for="tags">
+		<g:message code="recipe.tags.label" default="Tags" />
+		
+	</label>
+	<g:select name="tags" from="${com.chefkoochooloo.dao.Tag.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.tags*.id}" class="many-to-many"/>
 
 </div>
 

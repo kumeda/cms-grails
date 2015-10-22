@@ -43,17 +43,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${recipeInstance?.flags}">
-				<li class="fieldcontain">
-					<span id="flags-label" class="property-label"><g:message code="recipe.flags.label" default="Flags" /></span>
-					
-						<g:each in="${recipeInstance.flags}" var="f">
-						<span class="property-value" aria-labelledby="flags-label"><g:link controller="flag" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${recipeInstance?.images}">
 				<li class="fieldcontain">
 					<span id="images-label" class="property-label"><g:message code="recipe.images.label" default="Images" /></span>
@@ -102,6 +91,17 @@
 					
 						<g:each in="${recipeInstance.steps}" var="s">
 						<span class="property-value" aria-labelledby="steps-label"><g:link controller="recipeStep" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${recipeInstance?.tags}">
+				<li class="fieldcontain">
+					<span id="tags-label" class="property-label"><g:message code="recipe.tags.label" default="Tags" /></span>
+					
+						<g:each in="${recipeInstance.tags}" var="t">
+						<span class="property-value" aria-labelledby="tags-label"><g:link controller="tag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
