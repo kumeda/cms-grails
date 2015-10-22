@@ -11,6 +11,24 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'cover_url', 'error')} required">
+	<label for="cover_url">
+		<g:message code="country.cover_url.label" default="Coverurl" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="cover_url" cols="40" rows="5" maxlength="500" required="" value="${countryInstance?.cover_url}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'flag_url', 'error')} required">
+	<label for="flag_url">
+		<g:message code="country.flag_url.label" default="Flagurl" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="flag_url" cols="40" rows="5" maxlength="500" required="" value="${countryInstance?.flag_url}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'capital', 'error')} required">
 	<label for="capital">
 		<g:message code="country.capital.label" default="Capital" />
@@ -47,15 +65,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'cover_url', 'error')} required">
-	<label for="cover_url">
-		<g:message code="country.cover_url.label" default="Coverurl" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="cover_url" required="" value="${countryInstance?.cover_url}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'facts', 'error')} ">
 	<label for="facts">
 		<g:message code="country.facts.label" default="Facts" />
@@ -71,15 +80,6 @@
 </li>
 </ul>
 
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: countryInstance, field: 'flag_url', 'error')} required">
-	<label for="flag_url">
-		<g:message code="country.flag_url.label" default="Flagurl" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="flag_url" required="" value="${countryInstance?.flag_url}"/>
 
 </div>
 

@@ -13,11 +13,12 @@ class CountryFact {
 
   static mapping = {
     table '`country_fact`'
+    fact length: 1000 // determine how big a fact can be
     cache true
     version false
   }
 
   static constraints = {
-    fact blank: false
+    fact size: 1..1000, blank: false
   }
 }

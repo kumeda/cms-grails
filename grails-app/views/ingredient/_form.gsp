@@ -16,7 +16,7 @@
 		<g:message code="ingredient.spotlight.label" default="Spotlight" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="spotlight" cols="40" rows="5" maxlength="500" required="" value="${ingredientInstance?.spotlight}"/>
+	<g:textArea name="spotlight" cols="40" rows="5" maxlength="1000" required="" value="${ingredientInstance?.spotlight}"/>
 
 </div>
 

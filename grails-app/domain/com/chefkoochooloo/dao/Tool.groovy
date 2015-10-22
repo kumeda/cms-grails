@@ -20,5 +20,6 @@ class Tool {
 
   static constraints = {
     name blank: false
+    url size: 1..500, blank: false
   }
 }

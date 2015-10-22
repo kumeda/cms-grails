@@ -14,8 +14,8 @@ class LikeIngredient implements Serializable {
   static mapping = {
     table '`like_ingredient`'
     id composite: ['user', 'ingredient']
-    user(column: "user_id")
-    ingredient(column: "ingredient_id")
+    user(column: '`user_id`')
+    ingredient(column: '`ingredient_id`')
     cache true
     version false
   }

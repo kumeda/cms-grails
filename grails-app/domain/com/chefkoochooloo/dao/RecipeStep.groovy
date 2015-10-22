@@ -3,24 +3,28 @@ package com.chefkoochooloo.dao
 import groovy.transform.ToString
 
 @ToString(includePackage=false, includeNames=true, excludes="")
-class RecipeStep {
+class RecipeStep implements Serializable {
 
   static belongsTo = Recipe
 
   Integer id
-  Integer recipe_order
+  Integer order
   Integer type
   String label
   Recipe recipe
 
   static mapping = {
     table '`recipe_step`'
+    id composite: ['recipe', 'order']
+    recipe(column: '`recipe_id`')
+    order(column: '`step`')
+    label length: 500 // determine how big a label can be
     cache true
     version false
   }
 
   static constraints = {
-    recipe_order unique: true
     type min: 0, max: 1
+    label size: 1..500, blank: false
   }
 }

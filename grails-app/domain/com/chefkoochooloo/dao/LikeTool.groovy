@@ -14,8 +14,8 @@ class LikeTool implements Serializable {
   static mapping = {
     table '`like_tool`'
     id composite: ['user', 'tool']
-    user(column: "user_id")
-    tool(column: "tool_id")
+    user(column: '`user_id`')
+    tool(column: '`tool_id`')
     cache true
     version false
   }

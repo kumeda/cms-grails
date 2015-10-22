@@ -11,6 +11,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: toolInstance, field: 'url', 'error')} required">
+	<label for="url">
+		<g:message code="tool.url.label" default="Url" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textArea name="url" cols="40" rows="5" maxlength="500" required="" value="${toolInstance?.url}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: toolInstance, field: 'likes', 'error')} ">
 	<label for="likes">
 		<g:message code="tool.likes.label" default="Likes" />
@@ -26,15 +35,6 @@
 </li>
 </ul>
 
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: toolInstance, field: 'url', 'error')} required">
-	<label for="url">
-		<g:message code="tool.url.label" default="Url" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="url" required="" value="${toolInstance?.url}"/>
 
 </div>
 

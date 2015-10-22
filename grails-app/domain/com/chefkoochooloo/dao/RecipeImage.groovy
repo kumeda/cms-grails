@@ -15,11 +15,12 @@ class RecipeImage {
 
   static mapping = {
     table '`recipe_image`'
+    url length: 500 // determine how big a url can be
     cache true
     version false
   }
 
   static constraints = {
-    url blank: false
+    url size: 1..500, blank: false
   }
 }

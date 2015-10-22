@@ -24,11 +24,11 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="recipe_order" title="${message(code: 'recipeStep.recipe_order.label', default: 'Recipeorder')}" />
-					
 						<g:sortableColumn property="type" title="${message(code: 'recipeStep.type.label', default: 'Type')}" />
 					
 						<g:sortableColumn property="label" title="${message(code: 'recipeStep.label.label', default: 'Label')}" />
+					
+						<g:sortableColumn property="order" title="${message(code: 'recipeStep.order.label', default: 'Order')}" />
 					
 						<th><g:message code="recipeStep.recipe.label" default="Recipe" /></th>
 					
@@ -38,11 +38,11 @@
 				<g:each in="${recipeStepInstanceList}" status="i" var="recipeStepInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${recipeStepInstance.id}">${fieldValue(bean: recipeStepInstance, field: "recipe_order")}</g:link></td>
-					
-						<td>${fieldValue(bean: recipeStepInstance, field: "type")}</td>
+						<td><g:link action="show" id="${recipeStepInstance.id}">${fieldValue(bean: recipeStepInstance, field: "type")}</g:link></td>
 					
 						<td>${fieldValue(bean: recipeStepInstance, field: "label")}</td>
+					
+						<td>${fieldValue(bean: recipeStepInstance, field: "order")}</td>
 					
 						<td>${fieldValue(bean: recipeStepInstance, field: "recipe")}</td>
 					

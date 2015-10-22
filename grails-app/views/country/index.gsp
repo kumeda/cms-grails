@@ -26,13 +26,13 @@
 					
 						<g:sortableColumn property="name" title="${message(code: 'country.name.label', default: 'Name')}" />
 					
-						<g:sortableColumn property="capital" title="${message(code: 'country.capital.label', default: 'Capital')}" />
-					
-						<g:sortableColumn property="code" title="${message(code: 'country.code.label', default: 'Code')}" />
-					
 						<g:sortableColumn property="cover_url" title="${message(code: 'country.cover_url.label', default: 'Coverurl')}" />
 					
 						<g:sortableColumn property="flag_url" title="${message(code: 'country.flag_url.label', default: 'Flagurl')}" />
+					
+						<g:sortableColumn property="capital" title="${message(code: 'country.capital.label', default: 'Capital')}" />
+					
+						<g:sortableColumn property="code" title="${message(code: 'country.code.label', default: 'Code')}" />
 					
 						<g:sortableColumn property="population" title="${message(code: 'country.population.label', default: 'Population')}" />
 					
@@ -44,13 +44,13 @@
 					
 						<td><g:link action="show" id="${countryInstance.id}">${fieldValue(bean: countryInstance, field: "name")}</g:link></td>
 					
-						<td>${fieldValue(bean: countryInstance, field: "capital")}</td>
-					
-						<td>${fieldValue(bean: countryInstance, field: "code")}</td>
-					
 						<td>${fieldValue(bean: countryInstance, field: "cover_url")}</td>
 					
 						<td>${fieldValue(bean: countryInstance, field: "flag_url")}</td>
+					
+						<td>${fieldValue(bean: countryInstance, field: "capital")}</td>
+					
+						<td>${fieldValue(bean: countryInstance, field: "code")}</td>
 					
 						<td>${fieldValue(bean: countryInstance, field: "population")}</td>
 					

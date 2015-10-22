@@ -7,7 +7,7 @@
 		<g:message code="countryFact.fact.label" default="Fact" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="fact" required="" value="${countryFactInstance?.fact}"/>
+	<g:textArea name="fact" cols="40" rows="5" maxlength="1000" required="" value="${countryFactInstance?.fact}"/>
 
 </div>
 

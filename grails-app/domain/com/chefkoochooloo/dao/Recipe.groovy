@@ -10,7 +10,7 @@ class Recipe {
   Integer id
   String name
   String presentation
-  String time
+  String time // TBD: this should be a Date
   User   user
 
   static mapping = {

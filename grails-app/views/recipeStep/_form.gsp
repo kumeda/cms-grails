@@ -2,15 +2,6 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'recipe_order', 'error')} required">
-	<label for="recipe_order">
-		<g:message code="recipeStep.recipe_order.label" default="Recipeorder" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="recipe_order" type="number" value="${recipeStepInstance.recipe_order}" required=""/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'type', 'error')} required">
 	<label for="type">
 		<g:message code="recipeStep.type.label" default="Type" />
@@ -25,7 +16,16 @@
 		<g:message code="recipeStep.label.label" default="Label" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="label" required="" value="${recipeStepInstance?.label}"/>
+	<g:textArea name="label" cols="40" rows="5" maxlength="500" required="" value="${recipeStepInstance?.label}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'order', 'error')} required">
+	<label for="order">
+		<g:message code="recipeStep.order.label" default="Order" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="order" type="number" value="${recipeStepInstance.order}" required=""/>
 
 </div>
 

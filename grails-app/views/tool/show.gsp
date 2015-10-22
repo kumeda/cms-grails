@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${toolInstance?.url}">
+				<li class="fieldcontain">
+					<span id="url-label" class="property-label"><g:message code="tool.url.label" default="Url" /></span>
+					
+						<span class="property-value" aria-labelledby="url-label"><g:fieldValue bean="${toolInstance}" field="url"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${toolInstance?.likes}">
 				<li class="fieldcontain">
 					<span id="likes-label" class="property-label"><g:message code="tool.likes.label" default="Likes" /></span>
@@ -39,15 +48,6 @@
 						<g:each in="${toolInstance.likes}" var="l">
 						<span class="property-value" aria-labelledby="likes-label"><g:link controller="likeTool" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${toolInstance?.url}">
-				<li class="fieldcontain">
-					<span id="url-label" class="property-label"><g:message code="tool.url.label" default="Url" /></span>
-					
-						<span class="property-value" aria-labelledby="url-label"><g:fieldValue bean="${toolInstance}" field="url"/></span>
 					
 				</li>
 				</g:if>

@@ -32,6 +32,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${countryInstance?.cover_url}">
+				<li class="fieldcontain">
+					<span id="cover_url-label" class="property-label"><g:message code="country.cover_url.label" default="Coverurl" /></span>
+					
+						<span class="property-value" aria-labelledby="cover_url-label"><g:fieldValue bean="${countryInstance}" field="cover_url"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${countryInstance?.flag_url}">
+				<li class="fieldcontain">
+					<span id="flag_url-label" class="property-label"><g:message code="country.flag_url.label" default="Flagurl" /></span>
+					
+						<span class="property-value" aria-labelledby="flag_url-label"><g:fieldValue bean="${countryInstance}" field="flag_url"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${countryInstance?.capital}">
 				<li class="fieldcontain">
 					<span id="capital-label" class="property-label"><g:message code="country.capital.label" default="Capital" /></span>
@@ -61,15 +79,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${countryInstance?.cover_url}">
-				<li class="fieldcontain">
-					<span id="cover_url-label" class="property-label"><g:message code="country.cover_url.label" default="Coverurl" /></span>
-					
-						<span class="property-value" aria-labelledby="cover_url-label"><g:fieldValue bean="${countryInstance}" field="cover_url"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${countryInstance?.facts}">
 				<li class="fieldcontain">
 					<span id="facts-label" class="property-label"><g:message code="country.facts.label" default="Facts" /></span>
@@ -77,15 +86,6 @@
 						<g:each in="${countryInstance.facts}" var="f">
 						<span class="property-value" aria-labelledby="facts-label"><g:link controller="countryFact" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${countryInstance?.flag_url}">
-				<li class="fieldcontain">
-					<span id="flag_url-label" class="property-label"><g:message code="country.flag_url.label" default="Flagurl" /></span>
-					
-						<span class="property-value" aria-labelledby="flag_url-label"><g:fieldValue bean="${countryInstance}" field="flag_url"/></span>
 					
 				</li>
 				</g:if>

@@ -7,7 +7,7 @@
 		<g:message code="recipeImage.url.label" default="Url" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="url" required="" value="${recipeImageInstance?.url}"/>
+	<g:textArea name="url" cols="40" rows="5" maxlength="500" required="" value="${recipeImageInstance?.url}"/>
 
 </div>
 

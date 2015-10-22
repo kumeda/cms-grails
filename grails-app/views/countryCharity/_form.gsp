@@ -7,7 +7,7 @@
 		<g:message code="countryCharity.url.label" default="Url" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="url" cols="40" rows="5" maxlength="400" required="" value="${countryCharityInstance?.url}"/>
+	<g:textArea name="url" cols="40" rows="5" maxlength="500" required="" value="${countryCharityInstance?.url}"/>
 
 </div>
 

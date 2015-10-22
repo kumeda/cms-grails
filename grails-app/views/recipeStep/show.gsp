@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list recipeStep">
 			
-				<g:if test="${recipeStepInstance?.recipe_order}">
-				<li class="fieldcontain">
-					<span id="recipe_order-label" class="property-label"><g:message code="recipeStep.recipe_order.label" default="Recipeorder" /></span>
-					
-						<span class="property-value" aria-labelledby="recipe_order-label"><g:fieldValue bean="${recipeStepInstance}" field="recipe_order"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${recipeStepInstance?.type}">
 				<li class="fieldcontain">
 					<span id="type-label" class="property-label"><g:message code="recipeStep.type.label" default="Type" /></span>
@@ -46,6 +37,15 @@
 					<span id="label-label" class="property-label"><g:message code="recipeStep.label.label" default="Label" /></span>
 					
 						<span class="property-value" aria-labelledby="label-label"><g:fieldValue bean="${recipeStepInstance}" field="label"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${recipeStepInstance?.order}">
+				<li class="fieldcontain">
+					<span id="order-label" class="property-label"><g:message code="recipeStep.order.label" default="Order" /></span>
+					
+						<span class="property-value" aria-labelledby="order-label"><g:fieldValue bean="${recipeStepInstance}" field="order"/></span>
 					
 				</li>
 				</g:if>
