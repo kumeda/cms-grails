@@ -13,6 +13,7 @@ class Tool {
 
   static mapping = {
     table '`tool`'
+    url length: 500 // determine how big a url can be
     cache true
     version false
   }
