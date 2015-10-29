@@ -19,7 +19,6 @@ SQL_INSERT_RG=$DIR/recipe_tag.sql;
 SQL_INSERT_RT=$DIR/recipe_tool.sql;
 SQL_INSERT_TG=$DIR/tag.sql;
 SQL_INSERT_TL=$DIR/tool.sql;
-SQL_INSERT_TY=$DIR/type.sql;
 SQL_INSERT_UN=$DIR/unit.sql;
 
 # execute sql
@@ -47,7 +46,5 @@ echo "***** tag.sql *****"
 $CMD_MYSQL < $SQL_INSERT_TG
 echo "***** tool.sql *****"
 $CMD_MYSQL < $SQL_INSERT_TL
-echo "***** type.sql *****"
-$CMD_MYSQL < $SQL_INSERT_TY
 echo "***** unit.sql *****"
 $CMD_MYSQL < $SQL_INSERT_UN
