@@ -90,13 +90,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${countryInstance?.languages}">
+				<g:if test="${countryInstance?.language}">
 				<li class="fieldcontain">
-					<span id="languages-label" class="property-label"><g:message code="country.languages.label" default="Languages" /></span>
+					<span id="language-label" class="property-label"><g:message code="country.language.label" default="Language" /></span>
 					
-						<g:each in="${countryInstance.languages}" var="l">
-						<span class="property-value" aria-labelledby="languages-label"><g:link controller="language" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="language-label"><g:fieldValue bean="${countryInstance}" field="language"/></span>
 					
 				</li>
 				</g:if>

@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
   dependencies {
     // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
     //
-    compile 'com.amazonaws:aws-java-sdk:1.10.20' // http://aws.amazon.com/releasenotes/Java?browse=1
+    compile 'com.amazonaws:aws-java-sdk:1.10.27' // http://aws.amazon.com/releasenotes/Java?browse=1
 
     runtime 'mysql:mysql-connector-java:5.1.36'
     // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
@@ -67,7 +67,7 @@ grails.project.dependency.resolution = {
     compile ":scaffolding:2.1.2"
     compile ':cache:1.1.8'
     // asset-pipeline 2.0+ requires Java 7, use version 1.9.x with Java 6
-    compile ":asset-pipeline:2.5.1"
+    compile ":asset-pipeline:2.5.7"
 
     // plugins needed at runtime but not for compilation
     runtime ":hibernate4:4.3.10" // or ":hibernate:3.6.10.18"
@@ -76,7 +76,7 @@ grails.project.dependency.resolution = {
 
     // Uncomment these to enable additional asset-pipeline capabilities
     //compile ":sass-asset-pipeline:1.9.0"
-    compile ":less-asset-pipeline:2.3.0"
+    compile ":less-asset-pipeline:2.5.4"
     //compile ":coffee-asset-pipeline:1.8.0"
     //compile ":handlebars-asset-pipeline:1.3.0.3"
   }
