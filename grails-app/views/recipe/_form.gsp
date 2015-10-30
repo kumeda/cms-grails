@@ -11,12 +11,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'countries', 'error')} ">
-	<label for="countries">
-		<g:message code="recipe.countries.label" default="Countries" />
-		
+<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'country', 'error')} required">
+	<label for="country">
+		<g:message code="recipe.country.label" default="Country" />
+		<span class="required-indicator">*</span>
 	</label>
-	
+	<g:select id="country" name="country.id" from="${com.chefkoochooloo.dao.Country.list()}" optionKey="id" required="" value="${recipeInstance?.country?.id}" class="many-to-one"/>
 
 </div>
 
@@ -106,7 +106,16 @@
 		<g:message code="recipe.tags.label" default="Tags" />
 		
 	</label>
-	<g:select name="tags" from="${com.chefkoochooloo.dao.Tag.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.tags*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${recipeInstance?.tags?}" var="t">
+    <li><g:link controller="recipeTag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="recipeTag" action="create" params="['recipe.id': recipeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'recipeTag.label', default: 'RecipeTag')])}</g:link>
+</li>
+</ul>
+
 
 </div>
 
@@ -124,7 +133,25 @@
 		<g:message code="recipe.tools.label" default="Tools" />
 		
 	</label>
-	<g:select name="tools" from="${com.chefkoochooloo.dao.Tool.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.tools*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${recipeInstance?.tools?}" var="t">
+    <li><g:link controller="recipeTool" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="recipeTool" action="create" params="['recipe.id': recipeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'recipeTool.label', default: 'RecipeTool')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'type', 'error')} required">
+	<label for="type">
+		<g:message code="recipe.type.label" default="Type" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="type" type="number" value="${recipeInstance.type}" required=""/>
 
 </div>
 
@@ -133,7 +160,7 @@
 		<g:message code="recipe.types.label" default="Types" />
 		
 	</label>
-	<g:select name="types" from="${com.chefkoochooloo.dao.Type.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.types*.id}" class="many-to-many"/>
+	
 
 </div>
 

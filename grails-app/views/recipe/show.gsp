@@ -32,13 +32,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${recipeInstance?.countries}">
+				<g:if test="${recipeInstance?.country}">
 				<li class="fieldcontain">
-					<span id="countries-label" class="property-label"><g:message code="recipe.countries.label" default="Countries" /></span>
+					<span id="country-label" class="property-label"><g:message code="recipe.country.label" default="Country" /></span>
 					
-						<g:each in="${recipeInstance.countries}" var="c">
-						<span class="property-value" aria-labelledby="countries-label"><g:link controller="country" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="country-label"><g:link controller="country" action="show" id="${recipeInstance?.country?.id}">${recipeInstance?.country?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -101,7 +99,7 @@
 					<span id="tags-label" class="property-label"><g:message code="recipe.tags.label" default="Tags" /></span>
 					
 						<g:each in="${recipeInstance.tags}" var="t">
-						<span class="property-value" aria-labelledby="tags-label"><g:link controller="tag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tags-label"><g:link controller="recipeTag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
@@ -121,8 +119,17 @@
 					<span id="tools-label" class="property-label"><g:message code="recipe.tools.label" default="Tools" /></span>
 					
 						<g:each in="${recipeInstance.tools}" var="t">
-						<span class="property-value" aria-labelledby="tools-label"><g:link controller="tool" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tools-label"><g:link controller="recipeTool" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
 						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${recipeInstance?.type}">
+				<li class="fieldcontain">
+					<span id="type-label" class="property-label"><g:message code="recipe.type.label" default="Type" /></span>
+					
+						<span class="property-value" aria-labelledby="type-label"><g:fieldValue bean="${recipeInstance}" field="type"/></span>
 					
 				</li>
 				</g:if>
@@ -132,7 +139,7 @@
 					<span id="types-label" class="property-label"><g:message code="recipe.types.label" default="Types" /></span>
 					
 						<g:each in="${recipeInstance.types}" var="t">
-						<span class="property-value" aria-labelledby="types-label"><g:link controller="type" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="types-label"><g:link controller="null" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

@@ -52,6 +52,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${toolInstance?.recipes}">
+				<li class="fieldcontain">
+					<span id="recipes-label" class="property-label"><g:message code="tool.recipes.label" default="Recipes" /></span>
+					
+						<g:each in="${toolInstance.recipes}" var="r">
+						<span class="property-value" aria-labelledby="recipes-label"><g:link controller="recipeTool" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:toolInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
