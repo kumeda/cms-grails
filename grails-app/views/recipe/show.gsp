@@ -134,17 +134,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${recipeInstance?.types}">
-				<li class="fieldcontain">
-					<span id="types-label" class="property-label"><g:message code="recipe.types.label" default="Types" /></span>
-					
-						<g:each in="${recipeInstance.types}" var="t">
-						<span class="property-value" aria-labelledby="types-label"><g:link controller="null" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${recipeInstance?.user}">
 				<li class="fieldcontain">
 					<span id="user-label" class="property-label"><g:message code="recipe.user.label" default="User" /></span>

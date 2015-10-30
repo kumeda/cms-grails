@@ -155,15 +155,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'types', 'error')} ">
-	<label for="types">
-		<g:message code="recipe.types.label" default="Types" />
-		
-	</label>
-	
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'user', 'error')} required">
 	<label for="user">
 		<g:message code="recipe.user.label" default="User" />
