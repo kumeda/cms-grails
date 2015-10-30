@@ -28,9 +28,9 @@
 					
 						<g:sortableColumn property="label" title="${message(code: 'recipeStep.label.label', default: 'Label')}" />
 					
-						<g:sortableColumn property="order" title="${message(code: 'recipeStep.order.label', default: 'Order')}" />
-					
 						<th><g:message code="recipeStep.recipe.label" default="Recipe" /></th>
+					
+						<g:sortableColumn property="step" title="${message(code: 'recipeStep.step.label', default: 'Step')}" />
 					
 					</tr>
 				</thead>
@@ -42,9 +42,9 @@
 					
 						<td>${fieldValue(bean: recipeStepInstance, field: "label")}</td>
 					
-						<td>${fieldValue(bean: recipeStepInstance, field: "order")}</td>
-					
 						<td>${fieldValue(bean: recipeStepInstance, field: "recipe")}</td>
+					
+						<td>${fieldValue(bean: recipeStepInstance, field: "step")}</td>
 					
 					</tr>
 				</g:each>

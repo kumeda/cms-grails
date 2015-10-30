@@ -41,20 +41,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${recipeStepInstance?.order}">
-				<li class="fieldcontain">
-					<span id="order-label" class="property-label"><g:message code="recipeStep.order.label" default="Order" /></span>
-					
-						<span class="property-value" aria-labelledby="order-label"><g:fieldValue bean="${recipeStepInstance}" field="order"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${recipeStepInstance?.recipe}">
 				<li class="fieldcontain">
 					<span id="recipe-label" class="property-label"><g:message code="recipeStep.recipe.label" default="Recipe" /></span>
 					
 						<span class="property-value" aria-labelledby="recipe-label"><g:link controller="recipe" action="show" id="${recipeStepInstance?.recipe?.id}">${recipeStepInstance?.recipe?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${recipeStepInstance?.step}">
+				<li class="fieldcontain">
+					<span id="step-label" class="property-label"><g:message code="recipeStep.step.label" default="Step" /></span>
+					
+						<span class="property-value" aria-labelledby="step-label"><g:fieldValue bean="${recipeStepInstance}" field="step"/></span>
 					
 				</li>
 				</g:if>

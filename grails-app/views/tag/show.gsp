@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${tagInstance?.recipes}">
+				<li class="fieldcontain">
+					<span id="recipes-label" class="property-label"><g:message code="tag.recipes.label" default="Recipes" /></span>
+					
+						<g:each in="${tagInstance.recipes}" var="r">
+						<span class="property-value" aria-labelledby="recipes-label"><g:link controller="recipeTag" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:tagInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

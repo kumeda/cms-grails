@@ -20,21 +20,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'order', 'error')} required">
-	<label for="order">
-		<g:message code="recipeStep.order.label" default="Order" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="order" type="number" value="${recipeStepInstance.order}" required=""/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'recipe', 'error')} required">
 	<label for="recipe">
 		<g:message code="recipeStep.recipe.label" default="Recipe" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="recipe" name="recipe.id" from="${com.chefkoochooloo.dao.Recipe.list()}" optionKey="id" required="" value="${recipeStepInstance?.recipe?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: recipeStepInstance, field: 'step', 'error')} required">
+	<label for="step">
+		<g:message code="recipeStep.step.label" default="Step" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="step" type="number" value="${recipeStepInstance.step}" required=""/>
 
 </div>
 

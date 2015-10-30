@@ -26,9 +26,13 @@
 					
 						<g:sortableColumn property="name" title="${message(code: 'recipe.name.label', default: 'Name')}" />
 					
+						<th><g:message code="recipe.country.label" default="Country" /></th>
+					
 						<g:sortableColumn property="presentation" title="${message(code: 'recipe.presentation.label', default: 'Presentation')}" />
 					
 						<g:sortableColumn property="time" title="${message(code: 'recipe.time.label', default: 'Time')}" />
+					
+						<g:sortableColumn property="type" title="${message(code: 'recipe.type.label', default: 'Type')}" />
 					
 						<th><g:message code="recipe.user.label" default="User" /></th>
 					
@@ -40,9 +44,13 @@
 					
 						<td><g:link action="show" id="${recipeInstance.id}">${fieldValue(bean: recipeInstance, field: "name")}</g:link></td>
 					
+						<td>${fieldValue(bean: recipeInstance, field: "country")}</td>
+					
 						<td>${fieldValue(bean: recipeInstance, field: "presentation")}</td>
 					
 						<td>${fieldValue(bean: recipeInstance, field: "time")}</td>
+					
+						<td>${fieldValue(bean: recipeInstance, field: "type")}</td>
 					
 						<td>${fieldValue(bean: recipeInstance, field: "user")}</td>
 					

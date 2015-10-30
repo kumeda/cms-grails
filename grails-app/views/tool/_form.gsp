@@ -38,3 +38,21 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: toolInstance, field: 'recipes', 'error')} ">
+	<label for="recipes">
+		<g:message code="tool.recipes.label" default="Recipes" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${toolInstance?.recipes?}" var="r">
+    <li><g:link controller="recipeTool" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="recipeTool" action="create" params="['tool.id': toolInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'recipeTool.label', default: 'RecipeTool')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
