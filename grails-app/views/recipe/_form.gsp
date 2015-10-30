@@ -24,8 +24,10 @@
 	<label for="images">
 		<g:message code="recipe.images.label" default="Images" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.images?}" var="i">
     <li><g:link controller="recipeImage" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
@@ -42,8 +44,10 @@
 	<label for="ingredients">
 		<g:message code="recipe.ingredients.label" default="Ingredients" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.ingredients?}" var="i">
     <li><g:link controller="recipeIngredient" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
@@ -60,8 +64,10 @@
 	<label for="likes">
 		<g:message code="recipe.likes.label" default="Likes" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.likes?}" var="l">
     <li><g:link controller="likeRecipe" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></li>
@@ -87,8 +93,10 @@
 	<label for="steps">
 		<g:message code="recipe.steps.label" default="Steps" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.steps?}" var="s">
     <li><g:link controller="recipeStep" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
@@ -105,8 +113,10 @@
 	<label for="tags">
 		<g:message code="recipe.tags.label" default="Tags" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.tags?}" var="t">
     <li><g:link controller="recipeTag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
@@ -132,8 +142,10 @@
 	<label for="tools">
 		<g:message code="recipe.tools.label" default="Tools" />
 		
+
 	</label>
 	
+
 <ul class="one-to-many">
 <g:each in="${recipeInstance?.tools?}" var="t">
     <li><g:link controller="recipeTool" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></li>
