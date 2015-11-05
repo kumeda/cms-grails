@@ -2,15 +2,15 @@ package com.chefkoochooloo.app
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import com.chefkoochooloo.dao.*
 
 @Transactional(readOnly = true)
-class RecipeController {
+class RecipeManagerController {
 
-    static namespace = 'dev'
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+//        params.max = Math.min(max ?: 10, 100)
         respond Recipe.list(params), model:[recipeInstanceCount: Recipe.count()]
     }
 
